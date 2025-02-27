@@ -1,14 +1,16 @@
 <?php
 
+use App\Factorial;
 use PHPUnit\Framework\TestCase;
-use App_docker\Calculadora;
 
 class FactorialTest extends TestCase
 {
-    public function testSuma()
+    public function testFactorial()
     {
-        $calc = new calcularFactorial();
-        $this->assertGreaterThan(120, $calc->factorial(2, 5));
+        $factorial = new Factorial();
+        
+        $this->assertEquals(120, $factorial->calcularFactorial(5));
+        $this->assertNotEmpty($factorial->calcularFactorial(5));
         
     }
 }
